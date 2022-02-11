@@ -55,7 +55,12 @@ class BLManager {
     }
 
     async advancedSearch(request) {
-        Utils.lhtLog("BLManager: advancedSearch", "advancedSearch", "", "")
+        Utils.lhtLog("BLManager: advancedSearch", "advancedSearch", {
+            keyword: request.keyword,
+            hash: request.hash,
+            name: request.name
+        }, "");
+
         let message = request.keyword;
         let hashTag = request.hash;
         let name = request.name;
