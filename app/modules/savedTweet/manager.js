@@ -61,9 +61,9 @@ class BLManager {
             name: request.name
         }, "");
 
-        let message = request.keyword;
-        let hashTag = request.hash;
-        let name = request.name;
+        let message = request.keyword?request.keyword:"";
+        let hashTag = request.hash?request.hash:"";
+        let name = request.name?request.name:"";
         let selectionKey = {
             createdAt: 1.0,
             text: 1.0,
@@ -72,6 +72,7 @@ class BLManager {
             country: 1.0,
             name: 1.0,
         }
+        let query={};
         return await tweets.findData({
                 hashtag: new RegExp(`.*${hashTag}.*`, "i"),
                 text: new RegExp(`.*${message}.*`, "i"),
