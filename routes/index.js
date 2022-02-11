@@ -4,11 +4,15 @@
  import * as ValidationManger from "../middleware/validation";
  import TestModule from "../app/modules/testModule";
  import {stringConstants} from "../app/common/constants";
- import maxTPS from "../app/modules/savedTweet";
+ import SaveTweet from "../app/modules/savedTweet";
  
  module.exports = (app) => {
      app.get('/', (req, res) => res.send(stringConstants.SERVICE_STATUS_HTML));
-     app.get("/saved-tweet", new maxTPS().savedTweets);
+     app.get("/saved-tweet", new SaveTweet().savedTweets);
+     app.get("/writing-speed", new SaveTweet().writeSpeed);
+     app.get("/max-tps-count", new SaveTweet().maxTPSCount);
+     app.get("/advanced-search", new SaveTweet().advancedSearch);
+     app.get("/basic-search", new SaveTweet().basicSearch);
      /**
       * route definition
       */
