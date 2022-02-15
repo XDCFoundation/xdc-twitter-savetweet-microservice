@@ -13,6 +13,8 @@
      app.get("/max-tps-count", new SaveTweet().maxTPSCount);
      app.get("/advanced-search", new SaveTweet().advancedSearch);
      app.get("/basic-search", new SaveTweet().basicSearch);
+     app.get("/archived-tweet-from-testnet", new SaveTweet().archivedTweetFromTestNet);
+     app.get("/archived-tweet-from-testnet-advancesearch", new SaveTweet().archivedTweetAdvanceSearchDetails);
      /**
       * route definition
       */
