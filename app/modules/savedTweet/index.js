@@ -52,4 +52,19 @@ export default class FamilyController {
         return Utils.response(response, getRes, apiSuccessMessage.FETCH_SUCCESS, httpConstants.RESPONSE_STATUS.SUCCESS, httpConstants.RESPONSE_CODES.OK);
     }
 
+    async archivedTweetFromTestNet(request, response) {
+        const [error, getRes] = await Utils.parseResponse(new BLManager().archivedTweetFromTestNet(request.query));
+        if (!getRes) {
+            return Utils.handleError(error, request, response);
+        }
+        return Utils.response(response, getRes, apiSuccessMessage.FETCH_SUCCESS, httpConstants.RESPONSE_STATUS.SUCCESS, httpConstants.RESPONSE_CODES.OK);
+    }
+    
+    async archivedTweetAdvanceSearchDetails(request, response) {
+        const [error, getRes] = await Utils.parseResponse(new BLManager().archivedTweetAdvanceSearchDetails(request.query));
+        if (!getRes) {
+            return Utils.handleError(error, request, response);
+        }
+        return Utils.response(response, getRes, apiSuccessMessage.FETCH_SUCCESS, httpConstants.RESPONSE_STATUS.SUCCESS, httpConstants.RESPONSE_CODES.OK);
+    }
 }
