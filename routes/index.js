@@ -15,6 +15,7 @@
      app.get("/basic-search", new SaveTweet().basicSearch);
      app.get("/archived-tweet-from-testnet", new SaveTweet().archivedTweetFromTestNet);
      app.get("/archived-tweet-from-testnet-advancesearch", new SaveTweet().archivedTweetAdvanceSearchDetails);
+     app.post("/save-max-tps-count", new SaveTweet().savemaxTPSCount);
      /**
       * route definition
       */

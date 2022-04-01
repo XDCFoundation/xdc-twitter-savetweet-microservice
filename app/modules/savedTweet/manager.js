@@ -3,6 +3,7 @@ const MyContract = require("./NewTweet.json");
 import Utils from "../../utils";
 import savingSpeedDataPointsModel from "../../models/saveSpeedDataPoints";
 import maxTpsModel from "../../models/tpsCount";
+import SaveMaxTps from "../../models/saveMaxTps";
 import tweets from "../../models/tweets";
 import {
   apiFailureMessage,
@@ -152,6 +153,27 @@ class BLManager {
       throw new Error(err);
     }
   }
+   async savemaxTPSCount(request) {
+  let tpsCount = request.tpsCount
+  let tpsObj = new maxTpsModel()
+ 
+    tpsObj.saveStartTime = Date.now()
+    tpsObj.saveEndTime = Date.now(),
+    tpsObj.responseTime= 0,
+    tpsObj.tpscount= tpsCount,
+    tpsObj.savedTweets= 0,
+    tpsObj.addedOn= Date.now,
+    tpsObj.modifiedOn = Date.now,
+    tpsObj.isDeleted= false,
+    tpsObj.isActive=true
+
+    tpsObj.saveData()
+    return true
+    
+
+  }
+
+
 }
 
 module.exports = BLManager;
