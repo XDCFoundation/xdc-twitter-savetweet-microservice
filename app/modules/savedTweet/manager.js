@@ -17,7 +17,6 @@ const Config = require("../../../config");
 
 class BLManager {
   async savedTweets() {
-    console.log("sdfjkljafljlk")
     const web3 = new Web3(Config.WEB3_URL);
     const myContract = new web3.eth.Contract(
       MyContract.abi,
