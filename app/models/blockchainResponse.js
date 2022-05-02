@@ -10,8 +10,8 @@ const blockchainResponseModel = new mongoose.Schema({
   nonce: { type: Number, default: 0 },
   tweetId: { type: String, default: "" },
   to: { type: String, default: "" },
-  addedOn: { type: Number, default: Date.now() },
-  modifiedOn: { type: Number, default: Date.now() },
+  addedOn: { type: Number, default: (new Date).getTime() },
+  modifiedOn: { type: Number, default: (new Date).getTime() },
 });
 
 blockchainResponseModel.method({
