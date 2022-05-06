@@ -4,7 +4,7 @@ const blockchainResponseModel = new mongoose.Schema({
   messageHash: { type: String, default: "" },
   rawTransaction: { type: String, default: "" },
   transactionHash: { type: String, default: "" },
-  gaPrice: { type: Number, default: 0 },
+  gasPrice: { type: Number, default: 0 },
   gas: { type: Number, default: 0 },
   data: { type: String, default: "" },
   nonce: { type: Number, default: 0 },
