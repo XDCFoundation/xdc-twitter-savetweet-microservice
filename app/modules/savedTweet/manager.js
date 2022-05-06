@@ -27,16 +27,17 @@ class BLManager {
     // let skip = parseInt(0);
 
     // let limit = parseInt(0);
-
+   
     let result = await blockchainResponseModel.findData({}, {}, 0, 10, {
       _id: -1,
     });
-    // let tweetCount = await blockchainResponseModel.find().count()
+    let tweetCount = await blockchainResponseModel.count()
     let tweetCountFromBlockchain = await myContract.methods.getCount().call();
     console.log("tweet Counts ------------", tweetCountFromBlockchain);
 
     console.log("result----------------", result);
-    response.push(result, { blockchainTweetCount: tweetCountFromBlockchain });
+    // blockchainTweetCount: tweetCountFromBlockchain
+    response.push(result, { blockchainTweetCount: tweetCount});
     return { response, apiSuccessMessage: true, success: "200" };
     //return response
     // return sampleSaveTweet;

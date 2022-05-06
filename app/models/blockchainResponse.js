@@ -12,6 +12,8 @@ const blockchainResponseModel = new mongoose.Schema({
   to: { type: String, default: "" },
   addedOn: { type: Number, default: Date.now() },
   modifiedOn: { type: Number, default: Date.now() },
+  
+  currentTime: { type: Number, default: Date.now() },
 });
 
 blockchainResponseModel.method({
